@@ -38,7 +38,7 @@ down() {
 
 build_assets() {
 	# command build_assets:
-	docker-compose run --rm hugo hugo -b ${HUGO_URL} -s ${HUGO_SRC} -d ${HUGO_DEST} "$@"
+	docker-compose run --rm hugo -b ${HUGO_URL} -s ${HUGO_SRC} -d ${HUGO_DEST} "$@"
 } # => build_assets()
 
 watch_assets() {
@@ -63,9 +63,9 @@ case "$cmd" in
     down)
 		 down "$@"
 		;;
-	#workspace)
-	#	 exec_workspace "$@"
-	#	;;
+    #workspace)
+    #	 exec_workspace "$@"
+    #	;;
     #bash)
 	#	 exec_bash "$@"
 	#	;;

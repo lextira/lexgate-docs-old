@@ -19,3 +19,4 @@ WORKDIR /workspace
 
 # Expose default hugo port
 EXPOSE 1313
+ENTRYPOINT ["/usr/local/bin/hugo"]

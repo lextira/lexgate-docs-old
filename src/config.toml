@@ -1,4 +1,4 @@
-baseURL = "https://docs.lexgate.ch"
+baseURL = "https://docs.lexgate.ch/"
 languageCode = "en-us"
 title = "Lexgate Documentation"
 theme = "dot-hugo-documentation-theme"
