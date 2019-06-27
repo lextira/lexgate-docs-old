@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', '--recursive', 'https://github.com/lextira/lexgate-docs', '.']
+
+- name: 'gcr.io/$PROJECT_ID/docs-builder'
+  args: ['/bin/sh', './ldo', 'build']
+
+artifacts:
+  objects:
+    location: 'gs://docs.lexgate.ch'
+    paths: ['./public/*']

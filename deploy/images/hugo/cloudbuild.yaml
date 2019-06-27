@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/lextira/lexgate-docs', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/${PROJECT_ID}/docs-builder:latest', './deploy/images/hugo/']
+
+- name: 'gcr.io/cloud-builders/gcloud-slim'
+  args: [ '-v', '&&'
+          '/bin/sh', 'deploy/scripts/gcloud-images-clear-untagged.sh', 'docs-builder']
+
+- name: 'gcr.io/${PROJECT_ID}/docs-builder'
+  args: ['--help']
+
+images: ['gcr.io/${PROJECT_ID}/docs-builder:latest']

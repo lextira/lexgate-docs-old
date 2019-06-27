@@ -1,0 +1,85 @@
+#!/bin/sh
+
+export HUGO_SRC="./src"
+export HUGO_DEST="../public"
+export HUGO_URL="http://localhost:1313/"
+
+APPS="hugo"
+
+usage() {
+	# command help:
+	echo "
+### Lexdocs Application Simple Commands ###
+
+$0 up
+    start applications
+
+$0 down
+    end applications
+
+$0 watch
+    start watcher for project client side assets
+
+$0 build
+    builds assets for production
+
+	";
+} # => usage()
+
+up() {
+	# command up:
+	docker-compose up -d $APPS
+} # => up()
+
+down() {
+	# command down:
+	docker-compose down
+} # => down()
+
+build_assets() {
+	# command build_assets:
+	docker-compose run --rm hugo hugo -b ${HUGO_URL} -s ${HUGO_SRC} -d ${HUGO_DEST} "$@"
+} # => build_assets()
+
+watch_assets() {
+	# command watch_assets:
+	if command -v hugo; then
+		hugo -w -d ${HUGO_DEST} -s ${HUGO_SRC} -b ${HUGO_URL} "$@"
+	else
+		echo "ERROR: You need to install hugo on the host machine for this to work:"
+		echo "https://gohugo.io/getting-started/installing/"
+	fi
+} # => watch_assets()
+
+# get command name
+cmd="$1"
+
+# determine how we were called, then hand off to the function responsible
+[ -n "$1" ] && shift # scrape off command
+case "$cmd" in
+	up)
+		 up "$@"
+		;;
+    down)
+		 down "$@"
+		;;
+	#workspace)
+	#	 exec_workspace "$@"
+	#	;;
+    #bash)
+	#	 exec_bash "$@"
+	#	;;
+    watch)
+		 watch_assets "$@"
+		;;
+    build)
+		 build_assets "$@"
+		;;
+	""|help|-h|--help|--usage)
+		usage "$1"
+		exit 0
+		;;
+	*)
+		echo "Unknown command '$cmd'. Run without commands for usage help."
+		;;
+esac
