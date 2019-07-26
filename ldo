@@ -23,6 +23,9 @@ $0 watch
 $0 build
     builds assets for production
 
+$0 update
+    updates dependencies
+
 	";
 } # => usage()
 
@@ -51,6 +54,11 @@ watch_assets() {
 	fi
 } # => watch_assets()
 
+update() {
+	# command down:
+	git submodule foreach git pull
+} # => update()
+
 # get command name
 cmd="$1"
 
@@ -63,18 +71,15 @@ case "$cmd" in
     down)
 		 down "$@"
 		;;
-    #workspace)
-    #	 exec_workspace "$@"
-    #	;;
-    #bash)
-	#	 exec_bash "$@"
-	#	;;
     watch)
 		 watch_assets "$@"
 		;;
     build)
 		 build_assets "$@"
 		;;
+    update)
+    	 update "$@"
+    	;;
 	""|help|-h|--help|--usage)
 		usage "$1"
 		exit 0

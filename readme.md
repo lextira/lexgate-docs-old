@@ -25,3 +25,6 @@ you can extend watch and build with more arguments, for example build with draft
 
     bash ldo build -D
 [CLI Docs](https://gohugo.io/commands/hugo/)
+
+Update dependencies (Template) with
+bash ldo update
