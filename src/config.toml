@@ -1,19 +1,20 @@
-baseURL = "https://docs.lexgate.ch/"
-languageCode = "en-us"
-title = "Lexgate Documentation"
+baseURL = "gethugothemes.com"
 theme = "dot-hugo-documentation-theme"
 
+
 [params]
-primaryColor = "#ad0000"
+primaryColor = "#e52520"
 secondaryColor = "#f9f9f9"
 textColor = "#636363"
 textColorDark = "#242738"
 whiteColor = "#ffffff"
 
+
 [Languages]
 
   # English Language
   [Languages.en]
+  contentDir = "content/en"
   languageName = "En"
   weight = 1
   languageCode = "en-us"
@@ -21,91 +22,177 @@ whiteColor = "#ffffff"
   dateFormat = "2 January 2006"
   home = "Home"
   logo = "Lexgate Docs"
-  copyright = "The Hugo Documents are copyright © gethugothemes 2018."
+  copyright = "© Lexgate Docs Community"
 
     # navigation
     [Languages.en.menu]
-
+    
       [[Languages.en.menu.main]]
         weight = 2
         name = "Faq"
-        url = "/faq"
-
+        url = "faq"
+        
       [[Languages.en.menu.main]]
-        weight = 2
-        name = "contact"
-        url = "/contact"
-
+        weight = 3
+        name = "Contact"
+        url = "contact"
+        
       [[Languages.en.menu.main]]
-        weight = 2
-        name = "pages"
-        url = "/pages"
+        weight = 4
+        name = "Topics"
         hasChildren = true
 
           [[Languages.en.menu.main]]
-          parent = "pages"
-          name = "Elements"
-          URL = "/elements"
+          parent = "Topics"
+          name = "Elemente"
+          url = "elements"
           weight = 1
 
           [[Languages.en.menu.main]]
-          parent = "pages"
-          name = "Installation"
-          URL = "/installation"
+          parent = "Topics"
+          name = "Cockpit"
+          url = "cockpit"
           weight = 2
 
           [[Languages.en.menu.main]]
-          parent = "pages"
-          name = "Billing and Pricing"
-          URL = "/billing-pricing"
+          parent = "Topics"
+          name = "Organisation management"
+          url = "organisations"
           weight = 3
 
           [[Languages.en.menu.main]]
-          parent = "pages"
-          name = "Features"
-          URL = "/features"
+          parent = "Topics"
+          name = "Project management"
+          url = "projects"
           weight = 4
-
-
-
 
     # banner
     [Languages.en.params.banner]
       title = "Support Center & Knowledge base"
       description = "Find advice and answers from our support team fast or get in touch"
       image = "images/banner.jpg"
-      placeholder = "Have a question? Just ask here or enter terms"
+      placeholder = "Have a question? Just ask here by entering your terms"
 
-    # Topics
-    [Languages.en.params.topics]
-      title = "Find your answer by subject"
-
+    
     # call to action
     [Languages.en.params.cta]
       enable = true
-      title = "Didn't find an answer to your question?"
-      description = "Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam."
+      title = "Didn't find an answer to your question or any input to improve Lexgate?"
+      description = "Send us a message. We get back to you soon."
       btnText = "contact us"
-      btnURL = "/contact"
+      btnURL = "contact"
 
     # contact
     [Languages.en.params.contact]
-      title = "Got Any Questions"
+      title = "Got Any Questions?"
       content = "Submit the form and confirm your email address at <a class='text-primary' href='https://formspree.io/'>Formspree</a> Then add the following lines to contact page YAML Front Matter."
 
     # footer social icon
-    [[Languages.en.socialIcon]]
-      icon = "ti-facebook"
-      URL = "/#"
+    #[[Languages.en.socialIcon]]
+    #  icon = "ti-facebook"
+    #  linkURL = "#"
 
-    [[Languages.en.socialIcon]]
-      icon = "ti-twitter-alt"
-      URL = "/#"
+    #[[Languages.en.socialIcon]]
+    #  icon = "ti-twitter-alt"
+    #  linkURL = "#"
+      
+    #[[Languages.en.socialIcon]]
+    #  icon = "ti-vimeo-alt"
+    #  linkURL = "#"
+      
+    #[[Languages.en.socialIcon]]
+    #  icon = "ti-instagram"
+    #  linkURL = "#"
 
-    [[Languages.en.socialIcon]]
-      icon = "ti-vimeo-alt"
-      URL = "/#"
 
-    [[Languages.en.socialIcon]]
-      icon = "ti-instagram"
-      URL = "/#"
+  # German Language
+  [Languages.de]
+  contentDir = "content/de"
+  languageName = "De"
+  weight = 1
+  languageCode = "de-ch"
+  title = "Doc List"
+  dateFormat = "2 January 2006"
+  home = "Home"
+  logo = "Lexgate Docs"
+  copyright = "© Lexgate Docs Community"
+
+    # navigation
+    [Languages.de.menu]
+    
+      [[Languages.de.menu.main]]
+        weight = 2
+        name = "Faq"
+        url = "de/faq"
+
+      [[Languages.de.menu.main]]
+        weight = 3
+        name = "Kontakt"
+        url = "de/contact"
+
+      [[Languages.de.menu.main]]
+        weight = 4
+        name = "Themen"
+        hasChildren = true
+
+          [[Languages.de.menu.main]]
+          parent = "Themen"
+          name = "Elemente"
+          url = "de/elements"
+          weight = 1
+
+          [[Languages.de.menu.main]]
+          parent = "Themen"
+          name = "Cockpit"
+          url = "de/cockpit"
+          weight = 2
+
+          [[Languages.de.menu.main]]
+          parent = "Themen"
+          name = "Organisationsverwaltung"
+          url = "de/organisations"
+          weight = 3
+
+          [[Languages.de.menu.main]]
+          parent = "Themen"
+          name = "Projektverwaltung"
+          url = "de/projects"
+          weight = 4
+
+    # banner
+    [Languages.de.params.banner]
+      title = "Wissensdatenbank und Support Center"
+      description = "Finden sie schnell Antworten auf Ihre Fragen oder kontaktieren Sie uns."
+      image = "images/banner.jpg"
+      placeholder = "Haben Sie eine Frage? Bitte geben Sie diese hier ein."
+    
+    # call to action
+    [Languages.de.params.cta]
+      enable = true
+      title = "Haben Sie die Anwort auf Ihre Frage nicht gefunden oder haben Sie Vorschläge zur Verbesserung von Lexgate?"
+      description = "Senden Sie uns bitte eine Nachricht. Wir werden Sie in Kürze kontaktieren."
+      btnText = "Kontakt"
+      btnURL = "de/contact/"
+
+    # contact
+    [Languages.de.params.contact]
+      title = "Haben Sie Fragen oder Anregungen?"
+      content = "Bitte füllen Sie folgendes Formular aus und bestätigen sie Ihre Emailadresse unterfolgender Adresse <a class='text-primary' href='https://formspree.io/'>Formspree</a> Ajoutez ensuite les lignes suivantes pour contacter la page YAML Front Matter."
+
+
+    # footer social icon
+    #[[Languages.fr.socialIcon]]
+    #  icon = "ti-facebook"
+    #  linkURL = "#"
+
+    #[[Languages.fr.socialIcon]]
+    #  icon = "ti-twitter-alt"
+    #  linkURL = "#"
+      
+    #[[Languages.fr.socialIcon]]
+    #  icon = "ti-vimeo-alt"
+    #  linkURL = "#"
+      
+    #[[Languages.fr.socialIcon]]
+    #  icon = "ti-instagram"
+    #  linkURL = "#"
